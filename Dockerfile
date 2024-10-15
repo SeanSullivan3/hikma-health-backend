@@ -3,12 +3,12 @@ RUN apt-get update -y
 RUN apt-get install -y software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get update -y
-RUN apt-get install -y python3.7 python3.7-dev python3-pip build-essential postgresql-client libpq-dev wget git
+RUN apt-get install -y python3 python3-dev python3-pip build-essential postgresql-client libpq-dev wget git
 
 COPY requirements.txt /
 
-RUN python3.7 -m pip install pip
-RUN python3.7 -m pip install -r requirements.txt
+RUN python3 -m pip install pip
+RUN python3 -m pip install -r requirements.txt
 
 ARG app_env_arg
 ENV APP_ENV=$app_env_arg
