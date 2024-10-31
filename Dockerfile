@@ -7,7 +7,7 @@ RUN apt-get install -y python3.7 python3.7-dev python3-pip build-essential postg
 
 COPY requirements.txt /
 
-RUN python3.7 -m pip install setuptools
+RUN sudo apt-get install python3.7-distutils
 RUN python3.7 -m pip install pip
 RUN python3.7 -m pip install -r requirements.txt
 
